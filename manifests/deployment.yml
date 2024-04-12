@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apppython 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apppython
+  template:
+    metadata:
+      labels:
+        app: apppython 
+    spec:
+      containers:
+        - name: apppython 
+          image: acrcursolaepi.azurecr.io/apppython
+          ports:
+          - containerPort: 8000
